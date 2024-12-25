@@ -165,3 +165,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DATABASE_ROUTERS = (
     'django_tenants.routers.TenantSyncRouter',
 )
+
+TENANT_MODEL = "tenant.Client"
+TENANT_DOMAIN_MODEL = "tenant.Domain"
