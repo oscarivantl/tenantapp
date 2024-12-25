@@ -49,12 +49,14 @@ SHARED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tenant',
+    'users',
 )
 
 # Aplicaciones que solo deberian estar diponibles en el contexto del tenant
 TENANT_APPS = (
     'django.contrib.auth', # Gestiona usuarios unicos por tenant
     'django.contrib.contenttypes',
+    'users',
 )
 
 INSTALLED_APPS = SHARED_APPS + tuple(app for app in TENANT_APPS if app not in SHARED_APPS)
@@ -168,3 +170,5 @@ DATABASE_ROUTERS = (
 
 TENANT_MODEL = "tenant.Client"
 TENANT_DOMAIN_MODEL = "tenant.Domain"
+
+AUTH_USER_MODEL = 'users.CustomUser'
