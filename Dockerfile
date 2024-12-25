@@ -13,5 +13,6 @@ WORKDIR /code
 COPY ./requirements.txt .
 RUN pip install -r requirements.txt
 
+RUN mkdir -p /code/static_root
 # copy project
 COPY . .
